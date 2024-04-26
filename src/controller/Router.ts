@@ -28,9 +28,9 @@ router.post("/", taskValidationRules, async (req: Request, res: Response) => {
   if (req.headers.client == "desktop_web") {
     result = await desktopVersion.versionPostNavigate(fluxContext);
   } else if (req.headers.client == "mobile_android") {
-    result = await androidMobileVersion.versionPutNavigate(fluxContext);
+    result = await androidMobileVersion.versionPostNavigate(fluxContext);
   } else {
-    result = await mobileVersion.versionPutNavigate(fluxContext);
+    result = await mobileVersion.versionPostNavigate(fluxContext);
   }
 
   res.status(200).json(result);
